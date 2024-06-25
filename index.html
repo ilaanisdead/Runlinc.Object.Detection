@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Flashcards with Video Recognition</title>
     <style>
+#helpText {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+            max-width: 300px;
+        }
         body {
             font-family: Arial, sans-serif;
             display: flex;
@@ -69,11 +75,20 @@
                 <button id="randomizeButton">Randomize</button>
                 <button id="speakButton">Speak</button>
                 <button id="describeButton">Describe</button>
+<button id="helpButton">Help</button>
             </div>
             <button id="startVideoButton">Start Video</button>
             <button id="stopVideoButton" style="display:none;">Stop Video</button>
             <button id="startPredictingButton" style="margin-top:1rem; display:none;">Start Predicting</button>
             <div style="margin-top:1rem;" id="result"></div>
+            <div id="helpText">
+                <p><strong>Randomize:</strong> Displays a random word on the flashcard.</p>
+                <p><strong>Speak:</strong> Recognizes speech input and checks if it matches the current word.</p>
+                <p><strong>Describe:</strong> Speaks and displays the word and its example.</p>
+                <p><strong>Start Video:</strong> Starts the video stream.</p>
+                <p><strong>Stop Video:</strong> Stops the video stream.</p>
+                <p><strong>Start Predicting:</strong> Starts predicting objects in the video stream.</p>
+            </div>
         </div>
         <div id="video-container">
             <video id="video" style="display:none;"></video>

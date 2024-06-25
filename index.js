@@ -30,12 +30,14 @@ const result = document.getElementById('result');
 const speakButton = document.getElementById('speakButton');
 const randomizeButton = document.getElementById('randomizeButton');
 const describeButton = document.getElementById('describeButton');
+const helpButton = document.getElementById('helpButton');
 const startVideoButton = document.getElementById('startVideoButton');
 const stopVideoButton = document.getElementById('stopVideoButton');
 const startPredictingButton = document.getElementById('startPredictingButton');
 const video = document.getElementById('video');
 const videoCanvas = document.getElementById('videoCanvas');
 const videoContainer = document.getElementById('video-container');
+const helpText = document.getElementById('helpText');
 let mobilenet;
 let label = '';
 let confidence = 0;
@@ -79,6 +81,15 @@ speakButton.addEventListener('click', () => {
     recognition.onerror = (event) => {
         result.innerText = `Error occurred in recognition: ${event.error}`;
     };
+});
+
+// Toggle help text
+helpButton.addEventListener('click', () => {
+    if (helpText.style.display === 'none') {
+        helpText.style.display = 'block';
+    } else {
+        helpText.style.display = 'none';
+    }
 });
 
 // Describe word
